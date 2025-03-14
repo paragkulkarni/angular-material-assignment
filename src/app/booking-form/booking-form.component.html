@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="mb-3">
+      <label class="">Title</label>
+      <input class="form-control" formControlName="title" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="">Description</label>
+      <input class="form-control" formControlName="description" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="">Location</label>
+      <input class="form-control" formControlName="location" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="">Date</label>
+      <input class="form-control" formControlName="date" type="date">
+    </div>
+    <div class="mb-3">
+      <label class="">Price</label>
+      <input class="form-control" formControlName="price" type="text">
+    </div>
+    <div class="mb-3">
+      <label class="">Available Seat No</label>
+      <input class="form-control" formControlName="availableSeatNo" type="number">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Save click')">Save</button>
+</div>

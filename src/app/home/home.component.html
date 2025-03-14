@@ -1,0 +1,82 @@
+<div>
+  <div>
+    <div class="float-start h2">
+      Home Page for User
+    </div>
+    <button class="btn btn-primary float-end" (click)="logout()">Logout</button>
+  </div>
+  <div class="mt-5">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef > Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="availableSeatNo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Available Seat No </th>
+        <td mat-cell *matCellDef="let element"> {{element.availableSeatNo}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click)="clickedRows.add(row)"
+      [class.demo-row-is-clicked]="clickedRows.has(row)"
+      *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  <div>
+    <div>
+      <h3>
+        <b>Click On Table Rows to book the ticket</b>
+      </h3>
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="!clickedRows.size">
+      Clicked rows will be logged here
+    </div>
+
+    <div *ngIf="clickedRows.size>0">
+      <ul  class="alert alert-info" role="alert">
+        <li *ngFor="let clickedRow of clickedRows">
+          <b>You are booked the ticket for <span>{{clickedRow.location}}</span></b>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
