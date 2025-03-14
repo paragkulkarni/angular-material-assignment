@@ -2,9 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## On login Page enter the following credentials
+# For User Home
+     Username - user@gmail.com
+     Passsword - password
+# For Admin User
+     username - admin@gmail.com
+     Password - password
 
 ## Code scaffolding
 
