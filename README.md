@@ -1,4 +1,4 @@
-# EventBookingPlatform
+# EventBookingPlatform  - Angular 16 with Angular materail and new standalone components
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
